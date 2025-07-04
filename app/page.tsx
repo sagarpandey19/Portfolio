@@ -132,6 +132,17 @@ export default function Home() {
                     </motion.div>
                   ))}
                 </div>
+                {/* Backend Technologies Section */}
+                <div className="mt-6">
+                  <h3 className="text-lg font-semibold text-primary mb-2 text-center">Backend Technologies</h3>
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'REST API', 'JWT/Auth'].map((tech) => (
+                      <Badge key={tech} variant="outline" className="text-sm border-purple-500 text-purple-700">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             </motion.div>
 
