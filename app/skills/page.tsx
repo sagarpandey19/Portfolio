@@ -3,8 +3,9 @@
 import { motion } from 'framer-motion';
 import { Code, Database, Globe, Cpu, BookOpen, Users } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
+// import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -52,7 +53,21 @@ const skillCategories = [
       { name: 'Tailwind CSS', level: 88, experience: '1.5+ years' },
       { name: 'Next.js', level: 80, experience: '1+ year' },
     ],
-  }
+  },
+  {
+    title: 'Backend Technologies',
+    icon: Database,
+    color: 'text-purple-600',
+    bgColor: 'bg-purple-50 dark:bg-purple-950/50',
+    skills: [
+      { name: 'Node.js', level: 90, experience: '2+ years' },
+      { name: 'Express.js', level: 88, experience: '2+ years' },
+      { name: 'MongoDB', level: 85, experience: '2+ years' },
+      { name: 'Mongoose', level: 80, experience: '2+ years' },
+      { name: 'REST API', level: 90, experience: '2+ years' },
+      { name: 'JWT/Auth', level: 80, experience: '1.5+ years' },
+    ],
+  },
 ];
 
 export default function MinimalSkillsPage() {
@@ -92,6 +107,7 @@ export default function MinimalSkillsPage() {
                     <CardDescription className="text-base">
                       {category.title === 'Programming Languages' && 'Core programming languages I work with regularly'}
                       {category.title === 'Frontend Technologies' && 'Modern frontend frameworks and styling tools'}
+                      {category.title === 'Backend Technologies' && 'Essential backend technologies and frameworks'}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="p-8">
@@ -114,9 +130,23 @@ export default function MinimalSkillsPage() {
                               </Badge>
                             </div>
                           </div>
-                          <div className="space-y-2">
-                            <Progress value={Number(skill.level)} className="h-2" />
-                            <div className="flex justify-between text-xs text-muted-foreground">
+                          <div className="space-y-2 flex items-center gap-4">
+                            <div className="w-full">
+                              <LinearProgress
+                                variant="determinate"
+                                value={skill.level}
+                                color="inherit"
+                                sx={{
+                                  height: 8,
+                                  borderRadius: 8,
+                                  backgroundColor: '#e5e7eb',
+                                  '& .MuiLinearProgress-bar, & .MuiLinearProgress-bar1Determinate, & .MuiLinearProgress-barColorPrimary': {
+                                    backgroundColor: '#000 !important',
+                                  },
+                                }}
+                              />
+                            </div>
+                            <div className="flex-1 flex justify-between text-xs text-muted-foreground">
                               <span>Beginner</span>
                               <span>Proficient</span>
                               <span>Expert</span>
