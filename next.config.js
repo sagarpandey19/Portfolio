@@ -9,6 +9,12 @@ const nextConfig = {
   experimental: {
     serverActions: true,
   },
+  // Use SWC compiler with WebAssembly for better compatibility
+  swcMinify: true,
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true
+  }
 };
 
 module.exports = nextConfig;

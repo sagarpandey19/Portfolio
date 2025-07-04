@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { motion } from 'framer-motion';
 import { Code, Database, Globe, Cpu, BookOpen, Users } from 'lucide-react';
@@ -52,71 +52,10 @@ const skillCategories = [
       { name: 'Tailwind CSS', level: 88, experience: '1.5+ years' },
       { name: 'Next.js', level: 80, experience: '1+ year' },
     ],
-  },
-  {
-    title: 'Backend Technologies',
-    icon: Database,
-    color: 'text-purple-600',
-    bgColor: 'bg-purple-50 dark:bg-purple-950/50',
-    skills: [
-      { name: 'Node.js', level: 85, experience: '2+ years' },
-      { name: 'Express.js', level: 85, experience: '2+ years' },
-      { name: 'MongoDB', level: 80, experience: '1.5+ years' },
-      { name: 'FastAPI', level: 75, experience: '1+ year' },
-    ],
-  },
-  {
-    title: 'AI/ML Technologies',
-    icon: Cpu,
-    color: 'text-orange-600',
-    bgColor: 'bg-orange-50 dark:bg-orange-950/50',
-    skills: [
-      { name: 'TensorFlow', level: 75, experience: '1+ year' },
-      { name: 'PyTorch', level: 70, experience: '1+ year' },
-      { name: 'Machine Learning', level: 75, experience: '1+ year' },
-      { name: 'Data Science', level: 70, experience: '1+ year' },
-    ],
-  },
-  {
-    title: 'Tools & Platforms',
-    icon: BookOpen,
-    color: 'text-red-600',
-    bgColor: 'bg-red-50 dark:bg-red-950/50',
-    skills: [
-      { name: 'Git/GitHub', level: 90, experience: '3+ years' },
-      { name: 'Ubuntu/Linux', level: 80, experience: '2+ years' },
-      { name: 'VS Code', level: 95, experience: '3+ years' },
-      { name: 'Postman', level: 85, experience: '2+ years' },
-    ],
-  },
-  {
-    title: 'Soft Skills',
-    icon: Users,
-    color: 'text-teal-600',
-    bgColor: 'bg-teal-50 dark:bg-teal-950/50',
-    skills: [
-      { name: 'Problem Solving', level: 90, experience: 'Core Strength' },
-      { name: 'Team Collaboration', level: 85, experience: 'Strong' },
-      { name: 'Communication', level: 80, experience: 'Effective' },
-      { name: 'Adaptability', level: 88, experience: 'Quick Learner' },
-    ],
-  },
+  }
 ];
 
-const otherSkills = [
-  'Data Structures & Algorithms',
-  'Responsive Web Design',
-  'RESTful APIs',
-  'Socket.io',
-  'JWT Authentication',
-  'Agile Methodology',
-  'Code Review',
-  'Documentation',
-  'Testing',
-  'Debugging',
-];
-
-export default function Skills() {
+export default function MinimalSkillsPage() {
   return (
     <div className="min-h-screen pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -153,10 +92,6 @@ export default function Skills() {
                     <CardDescription className="text-base">
                       {category.title === 'Programming Languages' && 'Core programming languages I work with regularly'}
                       {category.title === 'Frontend Technologies' && 'Modern frontend frameworks and styling tools'}
-                      {category.title === 'Backend Technologies' && 'Server-side technologies and databases'}
-                      {category.title === 'AI/ML Technologies' && 'Machine learning frameworks and data science tools'}
-                      {category.title === 'Tools & Platforms' && 'Development tools and operating systems'}
-                      {category.title === 'Soft Skills' && 'Professional and interpersonal capabilities'}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="p-8">
@@ -195,73 +130,6 @@ export default function Skills() {
               </motion.div>
             ))}
           </div>
-
-          {/* Additional Skills */}
-          <motion.div variants={itemVariants}>
-            <Card>
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Additional Skills & Concepts</CardTitle>
-                <CardDescription>
-                  Other technical skills and concepts I'm familiar with
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-3 justify-center">
-                  {otherSkills.map((skill, index) => (
-                    <motion.div
-                      key={skill}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.05, duration: 0.3 }}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <Badge variant="outline" className="text-sm py-2 px-4 hover:bg-accent hover:text-accent-foreground transition-colors">
-                        {skill}
-                      </Badge>
-                    </motion.div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Learning Philosophy */}
-          <motion.div variants={itemVariants}>
-            <Card className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Continuous Learning</CardTitle>
-                <CardDescription>
-                  My approach to skill development and staying current with technology
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-center space-y-6">
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="space-y-3">
-                    <BookOpen className="w-12 h-12 text-accent mx-auto" />
-                    <h4 className="font-semibold text-lg">Always Learning</h4>
-                    <p className="text-muted-foreground">
-                      I believe in continuous learning and staying updated with the latest technologies and best practices.
-                    </p>
-                  </div>
-                  <div className="space-y-3">
-                    <Code className="w-12 h-12 text-accent mx-auto" />
-                    <h4 className="font-semibold text-lg">Hands-on Practice</h4>
-                    <p className="text-muted-foreground">
-                      I learn best by building projects and applying new concepts in real-world scenarios.
-                    </p>
-                  </div>
-                  <div className="space-y-3">
-                    <Users className="w-12 h-12 text-accent mx-auto" />
-                    <h4 className="font-semibold text-lg">Knowledge Sharing</h4>
-                    <p className="text-muted-foreground">
-                      I enjoy sharing knowledge with peers and learning from the development community.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
         </motion.div>
       </div>
     </div>
